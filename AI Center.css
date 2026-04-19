@@ -1,0 +1,191 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: all 0.2s ease;
+        }
+
+        body {
+            background: linear-gradient(120deg, #edf2f7, #f8f5f0);
+            font-family: 'Inter', sans-serif;
+            color: #1f2937;
+        }
+
+        .container {
+            max-width: 1100px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .brand-circle {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, #477c6a, #07b07b);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .brand strong {
+            font-size: 15px;
+            font-weight: 600;
+            color: #111827;
+        }
+
+        .custom-nav {
+            margin-top: -28px;
+            padding: 5px 5px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            margin-bottom: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            color: #6b7280;
+            font-weight: 500;
+            margin-left: 28px;
+            text-decoration: none;
+        }
+
+        .nav-links a:hover {
+            color: #111827;
+            background: #d1fae5;
+            padding: 7px 16px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #1f2a2e, #2b3a3f);
+            padding: 70px;
+            border-radius: 32px;
+            color: #f9fafb;
+        }
+
+        .hero small {
+            font-size: 12px;
+            letter-spacing: 2px;
+            color: #9ca3af;
+        }
+
+        .hero h1 {
+            font-size: 46px;
+            font-weight: 600;
+            line-height: 1.2;
+            margin: 15px 0;
+        }
+
+        .hero p {
+            color: #9ca3af;
+            font-size: 15px;
+        }
+
+        .stat-card {
+            background: #f9fafb;
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04);
+            transition: 0.3s;
+        }
+
+        .stat-card h6 {
+            font-size: 11px;
+            color: #07806d;
+            letter-spacing: 1.5px;
+        }
+
+        .stat-card h4 {
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .stat-card h2 {
+            font-weight: 600;
+            color: #161918;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .main-box {
+            background: #f8f7f4;
+            border-radius: 28px;
+            padding: 35px;
+            margin-top: 40px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        }
+
+        .main-box h4 {
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #141515;
+        }
+
+        .main-box h6 {
+            font-size: 12px;
+            font-weight: 600;
+            color: #07806d;
+        }
+
+        .request {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 18px;
+            margin-bottom: 15px;
+            border: 1px solid #f1f1f1;
+            transition: 0.3s;
+        }
+
+        .request h6 {
+            font-weight: 600;
+            color: #07806d;
+
+        }
+
+        .request p {
+            color: #6b7280;
+            font-size: 14px;
+            margin: 5px 0 10px;
+        }
+
+        .request:hover {
+            transform: translateY(-4px);
+        }
+
+        .tag {
+            font-size: 12px;
+            padding: 5px 12px;
+            border-radius: 20px;
+            margin-right: 6px;
+            cursor: pointer;
+        }
+
+        .green {
+            background: #13d2c928;
+            color: #07806d;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .gray {
+            background: #13d2c928;
+            color: #07806d;
+            cursor: pointer;
+        }

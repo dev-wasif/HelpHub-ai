@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HelpHub AI - Community Access</title>
+    <link rel="stylesheet" href="signup.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+</head>
+
+<body>
+    <div class="d-flex justify-content-between align-items-center custom-nav">
+        <div class="brand">
+            <div class="brand-circle">H</div>
+            <strong>HelpHub AI</strong>
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="explore.html">Explore</a>
+            <a href="leader.html" class="active-pill">Leaderboard</a>
+        </div>
+    </div>
+
+    <div class="main-container">
+
+        <div class="left-panel">
+            <div class="decoration-circle decoration-circle-1"></div>
+            <div class="decoration-circle decoration-circle-2"></div>
+
+            <div class="community-badge animate-fade-in">
+                <span></span>
+                Community Access
+            </div>
+
+            <h1 class="left-title animate-fade-in delay-1">
+                Enter the support network.
+            </h1>
+
+            <p class="left-description animate-fade-in delay-2">
+                Join our community-powered support ecosystem. Connect with experts, share knowledge, and get help when
+                you need it most.
+            </p>
+
+            <ul class="features-list">
+                <li class="feature-item animate-fade-in delay-3">
+                    <div class="feature-icon">
+                        <span class="iconify" data-icon="lucide:users"></span>
+                    </div>
+                    <div class="feature-content">
+                        <h4>Role-based community entry</h4>
+                        <p>Choose your role and access personalized community features tailored to your needs.</p>
+                    </div>
+                </li>
+
+                <li class="feature-item animate-fade-in delay-4">
+                    <div class="feature-icon">
+                        <span class="iconify" data-icon="lucide:layout-dashboard"></span>
+                    </div>
+                    <div class="feature-content">
+                        <h4>Direct dashboard access with seamless transitions</h4>
+                        <p>Navigate instantly to your personalized dashboard without friction or delays.</p>
+                    </div>
+                </li>
+
+                <li class="feature-item animate-fade-in delay-5">
+                    <div class="feature-icon">
+                        <span class="iconify" data-icon="lucide:database"></span>
+                    </div>
+                    <div class="feature-content">
+                        <h4>Local storage-driven persistent sessions</h4>
+                        <p>Your preferences and session data stay saved locally for a seamless experience.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="right-panel">
+            <div class="auth-badge animate-fade-in">
+                <span class="iconify" data-icon="lucide:shield-check" style="font-size: 14px;"></span>
+                Login / Signup
+            </div>
+
+            <h2 class="auth-title animate-fade-in delay-1">
+                Authenticate your community profile
+            </h2>
+
+            <form class="animate-fade-in delay-2">
+                <!-- Demo User Select -->
+                <div class="form-group">
+                    <label class="form-label">
+                        Demo User
+                        <span class="demo-badge">
+                            <span class="iconify" data-icon="lucide:sparkles" style="font-size: 10px;"></span>
+                            PREVIEW
+                        </span>
+                    </label>
+                    <div class="user-select">
+                        <div class="user-avatar">AK</div>
+                        <div class="user-info">
+                            <div class="user-name">Ayesha Khan</div>
+                            <div class="user-role">Community Expert</div>
+                        </div>
+                        <span class="iconify dropdown-icon" data-icon="lucide:chevron-down"></span>
+                    </div>
+                </div>
+
+                <!-- Role Select -->
+                <div class="form-group">
+                    <label class="form-label">Role</label>
+                    <div class="role-select-wrapper">
+                        <select class="role-select">
+                            <option value="both">Both</option>
+                            <option value="helper">Helper</option>
+                            <option value="seeker">Seeker</option>
+                            <option value="moderator">Moderator</option>
+                        </select>
+                        <span class="iconify role-select-icon" data-icon="lucide:chevron-down"></span>
+                    </div>
+                </div>
+
+                <!-- Email -->
+                <div class="form-group">
+                    <label class="form-label">Email Address</label>
+                    <input type="email" class="form-control-custom" value="community@helphub.ai" readonly>
+                </div>
+
+                <!-- Password -->
+                <div class="form-group">
+                    <label class="form-label">Password</label>
+                    <div class="password-wrapper">
+                        <input type="password" class="form-control-custom" value="helphub123" id="passwordInput">
+                        <button type="button" class="password-toggle" onclick="togglePassword()">
+                            <span class="iconify" data-icon="lucide:eye" id="eyeIcon"></span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn-submit">
+                    Continue to dashboard
+                    <span class="iconify" data-icon="lucide:arrow-right"></span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+
+        function togglePassword() {
+            const passwordInput = document.getElementById('passwordInput');
+            const eyeIcon = document.getElementById('eyeIcon');
+
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                eyeIcon.setAttribute('data-icon', 'lucide:eye-off');
+            } else {
+                passwordInput.type = 'password';
+                eyeIcon.setAttribute('data-icon', 'lucide:eye');
+            }
+        }
+        document.querySelector('form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const btn = document.querySelector('.btn-submit');
+            btn.innerHTML = `
+                <span class="iconify" data-icon="lucide:loader-2" style="animation: spin 1s linear infinite;"></span>
+                Authenticating...
+            `;
+
+            setTimeout(() => {
+                btn.innerHTML = `
+                    <span class="iconify" data-icon="lucide:check"></span>
+                    Success! Redirecting...
+                `;
+                btn.style.background = '#10b981';
+            }, 1500);
+        });
+
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes spin {
+                from { transform: rotate(0deg); }
+                to { transform: rotate(360deg); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+<script src="app.js"></script>
+</html>

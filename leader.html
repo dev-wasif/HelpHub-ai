@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard UI</title>
+    <link rel="stylesheet" href="leader.css">
+</head>
+<body>
+
+<div class="container">
+    
+    <header class="header-panel">
+        <span class="header-overline">Leaderboard</span>
+        <h1>Recognize the people who keep the community moving.</h1>
+        <p>Trust score, contribution count, and badges create visible momentum for reliable helpers.</p>
+    </header>
+
+    <nav class="floating-nav">
+        <div class="nav-logo">
+            <div class="nav-logo-icon">H</div>
+            <div class="nav-logo-text">HelpHub AI</div>
+        </div>
+        <div class="nav-links">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="explore.html">Explore</a>
+            <a href="leader.html" class="active">Leaderboard</a>
+        </div>
+    </nav>
+
+    <div class="cards-grid">
+        <div class="card">
+            <span class="card-overline">Top Helpers</span>
+            <h2>Rankings</h2>
+            
+            <div class="list-container">
+                <div class="list-item">
+                    <div class="avatar gold">MA</div>
+                    <div class="item-details">
+                        <div class="item-header">
+                            <span class="name">#1 Murtaza Ahmed</span>
+                            <span class="score">99%</span>
+                        </div>
+                        <div class="item-meta">
+                            <span>UI/UX, Figma Specialist</span>
+                            <span>42 contributions</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="list-item">
+                    <div class="avatar ha">HA</div>
+                    <div class="item-details">
+                        <div class="item-header">
+                            <span class="name">#2 Hassan Ali</span>
+                            <span class="score">88%</span>
+                        </div>
+                        <div class="item-meta">
+                            <span>JS, React, GitHub</span>
+                            <span>24 contributions</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="list-item">
+                    <div class="avatar sn">SN</div>
+                    <div class="item-details">
+                        <div class="item-header">
+                            <span class="name">#3 Sara Noor</span>
+                            <span class="score">74%</span>
+                        </div>
+                        <div class="item-meta">
+                            <span>Python, Data Science</span>
+                            <span>11 contributions</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="card-overline">Badge System</span>
+            <h2>Trust and achievement</h2>
+            
+            <div class="list-container">
+                <div class="badge-item">
+                    <span class="badge-name">Murtaza Ahmed</span>
+                    <span class="badge-desc">Design Guru • Top Contributor</span>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 99%;"></div></div>
+                </div>
+
+                <div class="badge-item">
+                    <span class="badge-name">Hassan Ali</span>
+                    <span class="badge-desc">Code Rescuer • Bug Hunter</span>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 88%;"></div></div>
+                </div>
+
+                <div class="badge-item">
+                    <span class="badge-name">Sara Noor</span>
+                    <span class="badge-desc">Community Voice</span>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 74%;"></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+<script src="app.js"></script>
+</html>

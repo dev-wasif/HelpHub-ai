@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HelpHub AI - Create Request</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+  :root {
+    --bg-color: #f7f3e9;
+    --card-light: #fffdf9;
+    --dark-header: #1a1e1f;
+    --accent-teal: #14b8a6;
+    --text-main: #333;
+    --text-muted: #666;
+    --border-color: #e5e0d5;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    background: radial-gradient(circle at top left, #e8f5f1 0%, #f7f3e9 40%);
+    /* Responsive padding: smaller on mobile, larger on desktop */
+    padding: 20px; 
+    color: var(--text-main);
+}
+
+/* Container to constrain width on ultra-wide screens */
+.page-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 40px;
+    flex-wrap: wrap; /* Allows wrapping on very small screens */
+    gap: 15px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+}
+
+.logo-icon {
+    background-color: var(--accent-teal);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+.btn-request {
+    background-color: #d8e6e2;
+    color: #2d4a43;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+/* Hero Header */
+header {
+    background-color: var(--dark-header);
+    color: white;
+    padding: 40px; /* Reduced from 60px */
+    border-radius: 24px;
+    margin-bottom: 30px;
+}
+
+header span {
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: #999;
+}
+
+header h1 {
+    font-size: clamp(28px, 5vw, 48px); /* Fluid typography */
+    margin-top: 15px;
+    max-width: 800px;
+    line-height: 1.1;
+}
+
+header p {
+    margin-top: 20px;
+    color: #aaa;
+    font-size: 15px;
+}
+
+/* Responsive Grid Layout */
+.main-container {
+    display: grid;
+    /* Default: Stacked for mobile */
+    grid-template-columns: 1fr;
+    gap: 20px;
+    align-items: start;
+}
+
+.card {
+    background-color: var(--card-light);
+    border-radius: 25px;
+    padding: 30px; /* Adjusted from 40px */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+}
+
+/* Form Styling */
+.form-group {
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    background: transparent;
+    font-size: 14px;
+}
+
+textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+/* Responsive row for desktop, stacks on mobile */
+.row {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.row .form-group {
+    flex: 1;
+}
+
+.form-actions {
+    display: flex;
+    flex-direction: column; /* Stack buttons on mobile */
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.btn-outline, .btn-primary {
+    width: 100%; /* Full width on mobile */
+    padding: 14px 24px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-outline {
+    border: 1px solid var(--border-color);
+    background: white;
+}
+
+.btn-primary {
+    background-color: var(--accent-teal);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 15px rgba(20, 184, 166, 0.3);
+}
+
+/* Sidebar Styling */
+.sidebar h2 {
+    font-size: 28px;
+    margin-bottom: 25px;
+    line-height: 1.2;
+}
+
+.ai-label {
+    color: var(--accent-teal);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.ai-data-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid #f0ede4;
+    font-size: 14px;
+    gap: 10px;
+}
+
+.ai-data-row span:first-child {
+    color: var(--text-muted);
+    min-width: 120px;
+}
+
+.ai-data-row span:last-child {
+    font-weight: 600;
+    text-align: right;
+}
+
+.ai-data-row.rewrite {
+    flex-direction: column; /* Better for mobile reading */
+    border-bottom: none;
+}
+
+.ai-data-row.rewrite p {
+    margin-top: 8px;
+    color: var(--text-main);
+    text-align: left;
+}
+
+/* --- MEDIA QUERIES --- */
+
+/* Tablet and Desktop View (768px and up) */
+@media (min-width: 768px) {
+    body {
+        padding: 40px 60px;
+    }
+    
+    .main-container {
+        grid-template-columns: 1.6fr 1fr; /* Split view */
+        gap: 30px;
+    }
+
+    .row {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .form-actions {
+        flex-direction: row;
+    }
+
+    .btn-outline, .btn-primary {
+        width: auto;
+    }
+
+    .ai-data-row.rewrite {
+        flex-direction: row;
+    }
+    
+    .ai-data-row.rewrite p {
+        text-align: right;
+        margin-top: 0;
+    }
+}
+
+/* Desktop Large (1024px and up) */
+@media (min-width: 1024px) {
+    body {
+        padding: 40px 80px;
+    }
+    
+    header {
+        padding: 60px;
+    }
+}
+</style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+            <span class="logo-icon">H</span>
+            <span>HelpHub AI</span>
+        </div>
+        <div class="nav-links">
+            <a href="#">Dashboard</a>
+            <a href="explore.html">Explore</a>
+            <a href="request.html" class="btn-request">Create Request</a>
+        </div>
+    </nav>
+
+    <header>
+        <span>Create Request</span>
+        <h1>Turn a rough problem into a clear help request.</h1>
+        <p>Use built-in AI suggestions for category, urgency, tags, and a stronger description rewrite.</p>
+    </header>
+
+    <div class="main-container">
+        <div class="card">
+            <div class="form-group">
+                <label>Title</label>
+                <input type="text" placeholder="Need review on my JavaScript quiz app before submission">
+            </div>
+
+            <div class="form-group">
+                <label>Description</label>
+                <textarea placeholder="Explain the challenge, your current progress, deadline, and what kind of help would be useful."></textarea>
+            </div>
+
+            <div class="row">
+                <div class="form-group">
+                    <label>Tags</label>
+                    <input type="text" value="JavaScript, Debugging, Review">
+                </div>
+                <div class="form-group">
+                    <label>Category</label>
+                    <select>
+                        <option>Web Development</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group" style="width: 50%;">
+                <label>Urgency</label>
+                <select>
+                    <option>High</option>
+                    <option>Medium</option>
+                    <option>Low</option>
+                </select>
+            </div>
+
+            <div class="form-actions">
+                <button class="btn-outline">Apply AI suggestions</button>
+                <button class="btn-primary">Publish request</button>
+            </div>
+        </div>
+
+        <div class="card sidebar">
+            <span class="ai-label">AI ASSISTANT</span>
+            <h2>Smart request guidance</h2>
+            
+            <div class="ai-data-row">
+                <span>Suggested category</span>
+                <span>Community</span>
+            </div>
+            <div class="ai-data-row">
+                <span>Detected urgency</span>
+                <span>Low</span>
+            </div>
+            <div class="ai-data-row">
+                <span>Suggested tags</span>
+                <span style="color: #333; font-weight: 400;">Add more detail for smarter tags</span>
+            </div>
+            <div class="ai-data-row rewrite">
+                <span>Rewrite suggestion</span>
+                <p>Start describing the challenge to generate a stronger version.</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="app.js"></script>
+</html>

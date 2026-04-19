@@ -1,0 +1,207 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background: white;
+  padding: 20px;
+}
+
+
+/* NAVBAR */
+.navbar , .mynav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  background-color: #f3efe4;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.avatar {
+    width: 30px;
+    height: 30px;
+    background-color: #2f8f73; /* green shade */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px; /* rounded corners */
+    font-size: 16px;
+    font-weight: semibold;
+    font-family: Arial, sans-serif;
+}
+
+/* .circle {
+  background: #0f766e;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+} */
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #555;
+}
+
+nav:hover{
+  background: #d1fae5;
+  padding: 8px 14px;
+  border-radius: 20px;
+  color: #065f46;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(135deg, #1f2937, #111827);
+  color: white;
+  padding: 40px;
+  border-radius: 25px;
+  margin-bottom: 30px;
+}
+
+.hero h1 {
+  font-size: 40px;
+  margin: 10px 0;
+}
+
+.hero .subtext {
+  color: #ccc;
+}
+
+.breadcrumb {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #aaa;
+}
+
+/* CONTENT */
+.content {
+  display: flex;
+  gap: 20px;
+}
+
+/* CARD */
+.card {
+ background-color: #fdf9f0;
+  padding: 20px;
+  border-radius: 20px;
+  /* flex: 1; */
+  
+}
+.filter{
+   display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* This creates the space-around effect */
+  min-height: 500px; /* Needs a height to spread items out */
+  padding: 2rem !important;
+}
+.dropdown-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Better than space-around for forms */
+}
+/* FILTER */
+.filter h4 {
+  color: #888;
+  margin-bottom: 10px;
+  
+}
+.myspace{
+  display: flex !important;
+  flex-direction: column !important;
+
+ 
+}
+
+/* POST */
+.tags {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+
+
+.blue { background: #dbeafe; color: #1d4ed8; }
+.red { background: #fee2e2; color: #b91c1c; }
+.green { background: #dcfce7; color: #166534; }
+
+.line{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.whiteButton{
+  background-color: #fefefe;
+  padding: 10px;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  color: black;
+}
+
+button{
+  background-color: #ecefe8;
+  color: #6c8981;
+}
+
+.tag-container {
+  display: flex;
+  gap: 8px;
+  font-family: sans-serif;
+}
+
+.tag {
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.web-dev {
+  background-color: #e9f3f1;
+  color: #1a535c;
+}
+
+.priority-high {
+  background-color: #fce8e8;
+  color: #c53030;
+}
+
+.status-solved {
+  background-color: #e6f4ea;
+  color: #1e7e34;
+}
+.dropdown-container {
+  width: 100%;
+  max-width: 400px;
+}
+
+.custom-select {
+  width: 100%;
+  padding: 16px 20px;
+  font-size: 16px;
+  color: #333;
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  appearance: none; /* Hides default arrow */
+  background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://w3.org" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>');
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+  cursor: pointer;
+}
